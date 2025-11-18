@@ -24,7 +24,19 @@ let dataBuku = [
   },
 ];
 let user = [{ user_id: 1, namaUser: "Alevaro de John", role: "admin" }];
-
+app.get("/books", function (req, res) {
+  try {
+    res.status(200).json({
+      msg: "Succes",
+      data: dataBuku,
+    });
+  } catch (error) {
+    res.status(501).json({
+      msg: "Failed",
+      error: error.message,
+    });
+  }
+})
 
 // GETT BOOK BY ID
 app.get("/books/:id", (req, res) => {

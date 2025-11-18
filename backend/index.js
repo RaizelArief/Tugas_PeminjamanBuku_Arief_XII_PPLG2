@@ -127,7 +127,7 @@ app.delete("/deleteBook/:id", (req, res) => {
   }
 });
 
-// 📚 PUT - Borrow Book (HANYA Student) 📚
+// PUT - Borrow Book (HANYA Student) 
 app.put("/borrowBook/:id", (req, res) => {
   const bookId = parseInt(req.params.id);
   const currentRole = user[0].role;
